@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellnessHub - Your Wellness Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="../index/NavAndFooter.css">
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header with Login/User Info -->
+        <div class="header">
+            <a href="#" class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>WellnessHub</span>
+            </a>
+            <div class="auth-section" id="authSection">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Login Page (initially visible) -->
+        <div id="loginPage" class="login-section">
+            <div class="login-container">
+                <div class="login-header">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to continue your wellness journey</p>
+                </div>
+
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <div class="remember">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="login-btn-form">Sign In</button>
+                </form>
+
+                <div class="divider">
+                    <span>Or continue with</span>
+                </div>
+
+                <!-- Google Sign-In Button -->
+                <div id="g_id_onload"
+                    data-client_id="6155945799-5t3af5mrkg145u7598ucbcq01l26t80i.apps.googleusercontent.com"
+                    data-context="signin" data-ux_mode="popup" data-callback="handleGoogleSignIn"
+                    data-auto_prompt="false">
+                </div>
+
+                <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_blue"
+                    data-text="signin_with" data-size="large" data-logo_alignment="left">
+                </div>
+
+                <div class="signup-link">
+                    Don't have an account? <a href="#">Sign up now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Homepage Content (initially hidden) -->
+        <div id="homePage" class="homepage-content hidden">
+            <div class="welcome-section">
+                <h1 class="welcome-title">Welcome to WellnessHub</h1>
+                <p class="welcome-text">Your personalized wellness journey starts here. Track your progress, set goals,
+                    and improve your overall well-being.</p>
+                <button class="btn btn-primary" onclick="showProfile()">
+                    <i class="fas fa-user"></i> View Your Profile
+                </button>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="feature-title">Health Tracking</h3>
+                    <p class="feature-description">Monitor your fitness activities, nutrition, and mental health all in
+                        one place.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Progress Analytics</h3>
+                    <p class="feature-description">Visualize your progress with detailed charts and analytics to stay
+                        motivated.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="feature-title">Achievement System</h3>
+                    <p class="feature-description">Earn badges and rewards as you reach milestones in your wellness
+                        journey.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Content (initially hidden) -->
+        <div id="profileContent" class="hidden">
+            <div class="profile-container">
+                <!-- Profile Card -->
+                <div class="profile-card">
+                    <img id="profileImage" src="" alt="Profile Image" class="profile-img">
+                    <h2 class="profile-name" id="profileUserName">User Name</h2>
+                    <p class="profile-role" id="profileRole">Wellness Enthusiast</p>
+
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-number" id="statProgress">85%</div>
+                            <div class="stat-label">Progress</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="statWorkouts">42</div>
+                            <div class="stat-label">Workouts</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="statGoals">28</div>
+                            <div class="stat-label">Goals</div>
+                        </div>
+                    </div>
+
+                    <p class="profile-bio" id="profileBio">Passionate about mental health, nutrition, and fitness. On a
+                        journey to become the best version of myself!</p>
+
+                    <div class="profile-actions">
+                        <button class="btn btn-primary" onclick="openEditProfileModal()">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-share-alt"></i> Share Profile
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Profile Content -->
+                <div class="profile-content">
+                    <!-- Wellness Progress -->
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Wellness Progress</h3>
+                            <button class="btn btn-outline" style="padding: 5px 10px; font-size: 0.9rem;"
+                                onclick="openProgressModal()">
+                                <i class="fas fa-chart-line"></i> Update Progress
+                            </button>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Fitness</span>
+                                <span id="fitnessProgress">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" id="fitnessBar"
+                                    style="width: 75%; background: var(--primary-green);"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Nutrition</span>
+                                <span id="nutritionProgress">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" id="nutritionBar"
+                                    style="width: 90%; background: var(--primary-blue);"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Mental Health</span>
+                                <span id="mentalHealthProgress">65%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" id="mentalHealthBar"
+                                    style="width: 65%; background: var(--primary-green);"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Sleep</span>
+                                <span id="sleepProgress">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" id="sleepBar"
+                                    style="width: 80%; background: var(--primary-blue);"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activities -->
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recent Activities</h3>
+                            <button class="btn btn-outline" style="padding: 5px 10px; font-size: 0.9rem;"
+                                onclick="openAddActivityModal()">
+                                <i class="fas fa-plus"></i> Add Activity
+                            </button>
+                        </div>
+
+                        <ul class="activity-list" id="activityList">
+                            <li class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">Completed Morning Run</h4>
+                                    <p class="activity-time">Today, 7:30 AM • 5.2 km • 32 mins</p>
+                                </div>
+                            </li>
+
+                            <li class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-apple-alt"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">Logged Breakfast</h4>
+                                    <p class="activity-time">Today, 8:45 AM • 420 calories</p>
+                                </div>
+                            </li>
+
+                            <li class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-meditation"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">Completed Meditation</h4>
+                                    <p class="activity-time">Yesterday, 8:00 PM • 15 mins</p>
+                                </div>
+                            </li>
+
+                            <li class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-dumbbell"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">Strength Training</h4>
+                                    <p class="activity-time">Yesterday, 6:30 PM • 45 mins</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Wellness Goals -->
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">My Wellness Goals</h3>
+                            <button class="btn btn-outline" style="padding: 5px 10px; font-size: 0.9rem;"
+                                onclick="openAddGoalModal()">
+                                <i class="fas fa-plus"></i> Add Goal
+                            </button>
+                        </div>
+
+                        <div class="goals-grid" id="goalsGrid">
+                            <div class="goal-card">
+                                <div class="goal-icon">
+                                    <i class="fas fa-walking"></i>
+                                </div>
+                                <h4 class="goal-title">Daily Steps</h4>
+                                <div class="goal-value">8,542/10,000</div>
+                            </div>
+
+                            <div class="goal-card">
+                                <div class="goal-icon">
+                                    <i class="fas fa-glass-whiskey"></i>
+                                </div>
+                                <h4 class="goal-title">Water Intake</h4>
+                                <div class="goal-value">5/8 glasses</div>
+                            </div>
+
+                            <div class="goal-card">
+                                <div class="goal-icon">
+                                    <i class="fas fa-bed"></i>
+                                </div>
+                                <h4 class="goal-title">Sleep Hours</h4>
+                                <div class="goal-value">7.5/8 hours</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Edit Profile Modal -->
+        <div id="editProfileModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Edit Profile</h3>
+                    <button class="close-modal" onclick="closeModal('editProfileModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form class="modal-form" id="editProfileForm">
+                        <div class="form-group">
+                            <label for="profileName">Full Name</label>
+                            <input type="text" id="profileName" value="Sarah Johnson">
+                        </div>
+                        <div class="form-group">
+                            <label for="profileRole">Role/Title</label>
+                            <input type="text" id="profileRoleInput" value="Wellness Enthusiast">
+                        </div>
+                        <div class="form-group">
+                            <label for="profileBio">Bio</label>
+                            <textarea
+                                id="profileBioInput">Passionate about mental health, nutrition, and fitness. On a journey to become the best version of myself!</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="profileImageInput">Profile Image URL</label>
+                            <input type="text" id="profileImageInput"
+                                value="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline" onclick="closeModal('editProfileModal')">Cancel</button>
+                    <button class="btn btn-primary" onclick="saveProfileChanges()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Modal -->
+        <div id="progressModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Update Wellness Progress</h3>
+                    <button class="close-modal" onclick="closeModal('progressModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form class="modal-form" id="progressForm">
+                        <div class="form-group">
+                            <label for="fitnessProgressInput">Fitness Progress (%)</label>
+                            <input type="number" id="fitnessProgressInput" min="0" max="100" value="75">
+                        </div>
+                        <div class="form-group">
+                            <label for="nutritionProgressInput">Nutrition Progress (%)</label>
+                            <input type="number" id="nutritionProgressInput" min="0" max="100" value="90">
+                        </div>
+                        <div class="form-group">
+                            <label for="mentalHealthProgressInput">Mental Health Progress (%)</label>
+                            <input type="number" id="mentalHealthProgressInput" min="0" max="100" value="65">
+                        </div>
+                        <div class="form-group">
+                            <label for="sleepProgressInput">Sleep Progress (%)</label>
+                            <input type="number" id="sleepProgressInput" min="0" max="100" value="80">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline" onclick="closeModal('progressModal')">Cancel</button>
+                    <button class="btn btn-primary" onclick="saveProgressChanges()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Activity Modal -->
+        <div id="addActivityModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Add New Activity</h3>
+                    <button class="close-modal" onclick="closeModal('addActivityModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form class="modal-form" id="activityForm">
+                        <div class="form-group">
+                            <label for="activityType">Activity Type</label>
+                            <select id="activityType">
+                                <option value="running">Running</option>
+                                <option value="walking">Walking</option>
+                                <option value="cycling">Cycling</option>
+                                <option value="swimming">Swimming</option>
+                                <option value="yoga">Yoga</option>
+                                <option value="meditation">Meditation</option>
+                                <option value="weightlifting">Weightlifting</option>
+                                <option value="meal">Meal Logging</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="activityTitle">Activity Title</label>
+                            <input type="text" id="activityTitle" placeholder="E.g., Morning Run">
+                        </div>
+                        <div class="form-group">
+                            <label for="activityDetails">Activity Details</label>
+                            <input type="text" id="activityDetails" placeholder="E.g., 5.2 km • 32 mins">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline" onclick="closeModal('addActivityModal')">Cancel</button>
+                    <button class="btn btn-primary" onclick="addNewActivity()">Add Activity</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Goal Modal -->
+        <div id="addGoalModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Add New Goal</h3>
+                    <button class="close-modal" onclick="closeModal('addGoalModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form class="modal-form" id="goalForm">
+                        <div class="form-group">
+                            <label for="goalType">Goal Type</label>
+                            <select id="goalType">
+                                <option value="steps">Daily Steps</option>
+                                <option value="water">Water Intake</option>
+                                <option value="sleep">Sleep Hours</option>
+                                <option value="meditation">Meditation</option>
+                                <option value="workout">Workout Days</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="goalTitle">Goal Title</label>
+                            <input type="text" id="goalTitle" placeholder="E.g., Daily Steps">
+                        </div>
+                        <div class="form-group">
+                            <label for="goalTarget">Target Value</label>
+                            <input type="text" id="goalTarget" placeholder="E.g., 10,000">
+                        </div>
+                        <div class="form-group">
+                            <label for="goalCurrent">Current Value</label>
+                            <input type="text" id="goalCurrent" placeholder="E.g., 8,542">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline" onclick="closeModal('addGoalModal')">Cancel</button>
+                    <button class="btn btn-primary" onclick="addNewGoal()">Add Goal</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+           <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Health & Wellness</h3>
+                    <p>Empowering students to live healthier, more balanced lives through education, community, and
+                        support.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../Fitness/fitness.html">Fitness</a></li>
+                        <li><a href="../Nutrition/nutrition.html">Nutrition</a></li>
+                        <li><a href="../Contact/contact.html">Contact</a></li>
+                        <li><a href="../Community/community.html">Community</a></li>
+                        <li><a href="../Mental-Health/mental-health.html">Mental Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> techspire@apu.edu</p>
+                        <p><i class="fas fa-phone"></i> (977) 9876543210</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Buddhanagar, Kathmandu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellnessHub Student Organization. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <script src="./login.js"></script>
+    <script src="../index/script.js"></script>
+</body>
+
+</html>

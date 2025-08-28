@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Wellness Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../index/NavAndFooter.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #27ae60;
+            --blue: #3498db;
+            --white: #ffffff;
+            --light-gray: #f5f7fa;
+            --dark-gray: #333;
+            --text-color: #444;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+            scroll-behavior: smooth;
+        }
+
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--green), var(--blue));
+            color: var(--white);
+            padding: 5rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 2.5rem;
+            margin-top: 2rem;
+            animation: fadeIn 1.5s ease;
+        }
+
+        /* Tools Grid */
+        .tools-section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-gray);
+            font-size: 2.2rem;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: calc(var(--delay) * 0.2s);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .tool-icon {
+            background: linear-gradient(135deg, var(--green), var(--blue));
+            color: white;
+            font-size: 2.5rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .tool-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-content h3 {
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .tool-content p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #219653;
+            transform: translateY(-3px);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h2 {
+            color: var(--dark-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .close {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: var(--dark-gray);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .result-container {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            display: none;
+        }
+
+        .bmi-result {
+            text-align: center;
+        }
+
+        .bmi-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--green);
+            margin: 1rem 0;
+        }
+
+        .bmi-category {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, #ff5252, #ffa500, #ffeb3b, #4caf50);
+            width: 0%;
+            transition: width 1.5s ease;
+        }
+
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        .macro-chart {
+            display: flex;
+            height: 30px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .macro-protein {
+            background-color: #3498db;
+        }
+
+        .macro-carbs {
+            background-color: #27ae60;
+        }
+
+        .macro-fat {
+            background-color: #e74c3c;
+        }
+
+        .macro-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .macro-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+
+        .macro-label {
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        .zone-container {
+            margin-top: 1.5rem;
+        }
+
+        .zone-item {
+            margin-bottom: 1rem;
+        }
+
+        .zone-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .zone-name {
+            font-weight: 600;
+        }
+
+        .zone-range {
+            color: #777;
+        }
+
+        .zone-bar {
+            height: 12px;
+            background-color: #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .zone-fill {
+            height: 100%;
+            border-radius: 6px;
+            width: 0%;
+            transition: width 1.5s ease;
+        }
+
+        .zone-warmup .zone-fill {
+            background-color: #3498db;
+        }
+
+        .zone-fatburn .zone-fill {
+            background-color: #27ae60;
+        }
+
+        .zone-cardio .zone-fill {
+            background-color: #f39c12;
+        }
+
+        .zone-peak .zone-fill {
+            background-color: #e74c3c;
+        }
+
+        /* Info Section */
+        .info-section {
+            padding: 3rem 5%;
+            text-align: center;
+            background-color: var(--white);
+            margin: 2rem 5%;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .info-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .copyright {
+            margin-top: 1.5rem;
+            opacity: 0.8;
+        }
+        footer{
+            padding: 70px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .modal-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+        <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>WellnessHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../About/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#programs" class="nav-link">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Events/events.html" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Resource/resource.html" class="nav-link">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Contact/contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../News/news.html" class="nav-link">News</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="../Tools/tools.html" class="nav-link">Tools</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+  
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Health & Wellness Tools</h1>
+            <p>Use our calculators to track your health and fitness goals.</p>
+            <div class="hero-icons">
+                <span>🧘‍♂️</span>
+                <span>🥗</span>
+                <span>❤️</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Grid Section -->
+    <section class="tools-section">
+        <h2 class="section-title">Wellness Calculators</h2>
+        <div class="tools-grid">
+            <!-- BMI Calculator Card -->
+            <div class="tool-card" style="--delay: 1">
+                <div class="tool-icon">
+                    <span>🏋️‍♂️</span>
+                </div>
+                <div class="tool-content">
+                    <h3>BMI Calculator</h3>
+                    <p>Check your Body Mass Index to know if you're underweight, normal, or overweight.</p>
+                    <button class="btn open-modal" data-modal="bmi-modal">Open Tool</button>
+                </div>
+            </div>
+
+            <!-- Nutrition Calculator Card -->
+            <div class="tool-card" style="--delay: 2">
+                <div class="tool-icon">
+                    <span>🥗</span>
+                </div>
+                <div class="tool-content">
+                    <h3>Nutrition Calculator</h3>
+                    <p>Estimate your daily calorie needs and macronutrient balance.</p>
+                    <button class="btn open-modal" data-modal="nutrition-modal">Open Tool</button>
+                </div>
+            </div>
+
+            <!-- Heart Rate Calculator Card -->
+            <div class="tool-card" style="--delay: 3">
+                <div class="tool-icon">
+                    <span>❤️</span>
+                </div>
+                <div class="tool-content">
+                    <h3>Heart Rate Zone Calculator</h3>
+                    <p>Find your optimal heart rate zones for fat burn, cardio, and peak training.</p>
+                    <button class="btn open-modal" data-modal="heartrate-modal">Open Tool</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section" id="info-section">
+        <p>These calculators are guides and not medical advice. Always consult a healthcare professional for personalized health recommendations.</p>
+    </section>
+
+
+
+    <!-- BMI Calculator Modal -->
+    <div class="modal" id="bmi-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><span>🏋️‍♂️</span> BMI Calculator</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="bmi-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" required min="100" max="250">
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" required min="30" max="200">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="age">Age (optional)</label>
+                        <input type="number" id="age" min="10" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender (optional)</label>
+                        <select id="gender">
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Calculate BMI</button>
+            </form>
+            <div class="result-container bmi-result" id="bmi-result">
+                <h3>Your BMI Result</h3>
+                <div class="bmi-value" id="bmi-value">00.0</div>
+                <div class="bmi-category" id="bmi-category">Category</div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="bmi-progress"></div>
+                </div>
+                <div class="progress-labels">
+                    <span>Underweight</span>
+                    <span>Normal</span>
+                    <span>Overweight</span>
+                    <span>Obese</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nutrition Calculator Modal -->
+    <div class="modal" id="nutrition-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><span>🥗</span> Nutrition Calculator</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="nutrition-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nutri-age">Age</label>
+                        <input type="number" id="nutri-age" required min="10" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="nutri-gender">Gender</label>
+                        <select id="nutri-gender" required>
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nutri-height">Height (cm)</label>
+                        <input type="number" id="nutri-height" required min="100" max="250">
+                    </div>
+                    <div class="form-group">
+                        <label for="nutri-weight">Weight (kg)</label>
+                        <input type="number" id="nutri-weight" required min="30" max="200">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="activity">Activity Level</label>
+                    <select id="activity" required>
+                        <option value="">Select</option>
+                        <option value="1.2">Sedentary (little or no exercise)</option>
+                        <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
+                        <option value="1.55">Moderately active (moderate exercise 3-5 days/week)</option>
+                        <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
+                        <option value="1.9">Extra active (very hard exercise, physical job)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Calculate Calories</button>
+            </form>
+            <div class="result-container" id="nutrition-result">
+                <h3>Your Daily Nutrition Needs</h3>
+                <div class="calories-value" id="calories-value">2000 calories</div>
+                
+                <h4>Macronutrient Breakdown</h4>
+                <div class="macro-chart" id="macro-chart">
+                    <div class="macro-item macro-protein" id="macro-protein" style="width: 30%;">30% Protein</div>
+                    <div class="macro-item macro-carbs" id="macro-carbs" style="width: 50%;">50% Carbs</div>
+                    <div class="macro-item macro-fat" id="macro-fat" style="width: 20%;">20% Fat</div>
+                </div>
+                <div class="macro-labels">
+                    <span class="macro-label">Protein: <span id="protein-grams">150g</span></span>
+                    <span class="macro-label">Carbs: <span id="carbs-grams">250g</span></span>
+                    <span class="macro-label">Fat: <span id="fat-grams">44g</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Heart Rate Calculator Modal -->
+    <div class="modal" id="heartrate-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><span>❤️</span> Heart Rate Zone Calculator</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="heartrate-form">
+                <div class="form-group">
+                    <label for="hr-age">Your Age</label>
+                    <input type="number" id="hr-age" required min="10" max="100">
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Calculate Zones</button>
+            </form>
+            <div class="result-container" id="heartrate-result">
+                <h3>Your Heart Rate Zones</h3>
+                <div class="max-hr">Maximum Heart Rate: <span id="max-hr">190</span> BPM</div>
+                
+                <div class="zone-container">
+                    <div class="zone-item zone-warmup">
+                        <div class="zone-header">
+                            <span class="zone-name">Warm-up</span>
+                            <span class="zone-range" id="warmup-range">95-114 BPM</span>
+                        </div>
+                        <div class="zone-bar">
+                            <div class="zone-fill" id="warmup-fill" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="zone-item zone-fatburn">
+                        <div class="zone-header">
+                            <span class="zone-name">Fat Burn</span>
+                            <span class="zone-range" id="fatburn-range">114-133 BPM</span>
+                        </div>
+                        <div class="zone-bar">
+                            <div class="zone-fill" id="fatburn-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="zone-item zone-cardio">
+                        <div class="zone-header">
+                            <span class="zone-name">Cardio</span>
+                            <span class="zone-range" id="cardio-range">133-162 BPM</span>
+                        </div>
+                        <div class="zone-bar">
+                            <div class="zone-fill" id="cardio-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="zone-item zone-peak">
+                        <div class="zone-header">
+                            <span class="zone-name">Peak</span>
+                            <span class="zone-range" id="peak-range">162-181 BPM</span>
+                        </div>
+                        <div class="zone-bar">
+                            <div class="zone-fill" id="peak-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Buddhanagar, Kathmandu</li>
+                        <li><i class="fas fa-phone"></i> (977) 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> techspire@apu.edu</li>
+                    </ul>
+                    <div class="social-links">
+                         <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../Fitness/fitness.html">Fitness</a></li>
+                        <li><a href="../Nutrition/nutrition.html">Nutrition</a></li>
+                        <li><a href="../Contact/contact.html">Contact</a></li>
+                        <li><a href="../Community/community.html">Community</a></li>
+                        <li><a href="../Mental-Health/mental-health.html">Mental Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Mission</h3>
+                    <p>To promote health and wellness among students through education, resources, and supportive
+                        community programs.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellnessHub Student Organization. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // DOM Elements
+        const modalButtons = document.querySelectorAll('.open-modal');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close');
+        const infoSection = document.getElementById('info-section');
+
+        // Show modal function
+        function showModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+        }
+
+        // Hide modal function
+        function hideModal(modal) {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 400);
+        }
+
+        // Event Listeners for modals
+        modalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.getAttribute('data-modal');
+                showModal(modalId);
+            });
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal');
+                hideModal(modal);
+            });
+        });
+
+        // Close modal when clicking outside
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideModal(modal);
+                }
+            });
+        });
+
+        // BMI Calculator
+        const bmiForm = document.getElementById('bmi-form');
+        const bmiResult = document.getElementById('bmi-result');
+        const bmiValue = document.getElementById('bmi-value');
+        const bmiCategory = document.getElementById('bmi-category');
+        const bmiProgress = document.getElementById('bmi-progress');
+
+        bmiForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const height = parseFloat(document.getElementById('height').value) / 100; // convert to meters
+            const weight = parseFloat(document.getElementById('weight').value);
+            
+            const bmi = weight / (height * height);
+            const roundedBmi = bmi.toFixed(1);
+            
+            // Animate the BMI value
+            animateValue(bmiValue, 0, roundedBmi, 1500);
+            
+            // Determine category
+            let category = '';
+            let progressWidth = 0;
+            
+            if (bmi < 18.5) {
+                category = 'Underweight';
+                progressWidth = 15;
+            } else if (bmi >= 18.5 && bmi < 25) {
+                category = 'Normal weight';
+                progressWidth = 45;
+            } else if (bmi >= 25 && bmi < 30) {
+                category = 'Overweight';
+                progressWidth = 75;
+            } else {
+                category = 'Obese';
+                progressWidth = 95;
+            }
+            
+            bmiCategory.textContent = category;
+            
+            // Animate progress bar
+            bmiProgress.style.width = '0';
+            setTimeout(() => {
+                bmiProgress.style.width = `${progressWidth}%`;
+            }, 100);
+            
+            // Show result
+            bmiResult.style.display = 'block';
+        });
+
+        // Nutrition Calculator
+        const nutritionForm = document.getElementById('nutrition-form');
+        const nutritionResult = document.getElementById('nutrition-result');
+        const caloriesValue = document.getElementById('calories-value');
+        const macroProtein = document.getElementById('macro-protein');
+        const macroCarbs = document.getElementById('macro-carbs');
+        const macroFat = document.getElementById('macro-fat');
+        const proteinGrams = document.getElementById('protein-grams');
+        const carbsGrams = document.getElementById('carbs-grams');
+        const fatGrams = document.getElementById('fat-grams');
+
+        nutritionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const age = parseFloat(document.getElementById('nutri-age').value);
+            const height = parseFloat(document.getElementById('nutri-height').value);
+            const weight = parseFloat(document.getElementById('nutri-weight').value);
+            const gender = document.getElementById('nutri-gender').value;
+            const activity = parseFloat(document.getElementById('activity').value);
+            
+            // Calculate BMR (Mifflin-St Jeor Equation)
+            let bmr;
+            if (gender === 'male') {
+                bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+            } else {
+                bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+            }
+            
+            // Calculate TDEE
+            const calories = Math.round(bmr * activity);
+            
+            // Animate calories value
+            animateValue(caloriesValue, 0, calories, 1500, ' calories');
+            
+            // Calculate macronutrients (40% carbs, 30% protein, 30% fat)
+            const proteinCalories = calories * 0.3;
+            const carbsCalories = calories * 0.4;
+            const fatCalories = calories * 0.3;
+            
+            // Convert to grams
+            const proteinG = Math.round(proteinCalories / 4);
+            const carbsG = Math.round(carbsCalories / 4);
+            const fatG = Math.round(fatCalories / 9);
+            
+            // Update macronutrient display
+            macroProtein.style.width = '30%';
+            macroProtein.textContent = '30% Protein';
+            macroCarbs.style.width = '40%';
+            macroCarbs.textContent = '40% Carbs';
+            macroFat.style.width = '30%';
+            macroFat.textContent = '30% Fat';
+            
+            proteinGrams.textContent = `${proteinG}g`;
+            carbsGrams.textContent = `${carbsG}g`;
+            fatGrams.textContent = `${fatG}g`;
+            
+            // Show result
+            nutritionResult.style.display = 'block';
+        });
+
+        // Heart Rate Calculator
+        const heartrateForm = document.getElementById('heartrate-form');
+        const heartrateResult = document.getElementById('heartrate-result');
+        const maxHr = document.getElementById('max-hr');
+        const warmupRange = document.getElementById('warmup-range');
+        const fatburnRange = document.getElementById('fatburn-range');
+        const cardioRange = document.getElementById('cardio-range');
+        const peakRange = document.getElementById('peak-range');
+        const warmupFill = document.getElementById('warmup-fill');
+        const fatburnFill = document.getElementById('fatburn-fill');
+        const cardioFill = document.getElementById('cardio-fill');
+        const peakFill = document.getElementById('peak-fill');
+
+        heartrateForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const age = parseFloat(document.getElementById('hr-age').value);
+            
+            // Calculate max heart rate
+            const maxHeartRate = 220 - age;
+            
+            // Calculate zones
+            const warmupLow = Math.round(maxHeartRate * 0.5);
+            const warmupHigh = Math.round(maxHeartRate * 0.6);
+            const fatburnLow = Math.round(maxHeartRate * 0.6);
+            const fatburnHigh = Math.round(maxHeartRate * 0.7);
+            const cardioLow = Math.round(maxHeartRate * 0.7);
+            const cardioHigh = Math.round(maxHeartRate * 0.85);
+            const peakLow = Math.round(maxHeartRate * 0.85);
+            const peakHigh = Math.round(maxHeartRate * 0.95);
+            
+            // Update display
+            animateValue(maxHr, 0, maxHeartRate, 1500, ' BPM');
+            
+            warmupRange.textContent = `${warmupLow}-${warmupHigh} BPM`;
+            fatburnRange.textContent = `${fatburnLow}-${fatburnHigh} BPM`;
+            cardioRange.textContent = `${cardioLow}-${cardioHigh} BPM`;
+            peakRange.textContent = `${peakLow}-${peakHigh} BPM`;
+            
+            // Reset and animate zone bars
+            [warmupFill, fatburnFill, cardioFill, peakFill].forEach(fill => {
+                fill.style.width = '0';
+            });
+            
+            setTimeout(() => {
+                warmupFill.style.width = '50%';
+                fatburnFill.style.width = '60%';
+                cardioFill.style.width = '70%';
+                peakFill.style.width = '85%';
+            }, 100);
+            
+            // Show result
+            heartrateResult.style.display = 'block';
+        });
+
+        // Utility function to animate values
+        function animateValue(element, start, end, duration, suffix = '') {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    element.textContent = end + suffix;
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Check if info section is in viewport for animation
+        function checkScroll() {
+            const windowHeight = window.innerHeight;
+            const elementTop = infoSection.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < windowHeight - elementVisible) {
+                infoSection.classList.add('visible');
+            }
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        // Initial check
+        checkScroll();
+    </script>
+</body>
+</html>

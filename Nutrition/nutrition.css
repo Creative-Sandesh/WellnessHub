@@ -1,0 +1,524 @@
+/* Nutrition Page Specific Styles */
+
+/* Nutrition Hero Section */
+.nutrition-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding: 150px 0 100px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.nutrition-hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nutrition-hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Recipe Cards Section */
+.recipes-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.recipe-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.recipe-card:hover .recipe-image img {
+    transform: scale(1.05);
+}
+
+.recipe-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.recipe-time,
+.recipe-difficulty {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.recipe-content {
+    padding: 2rem;
+}
+
+.recipe-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1b5e20;
+    margin-bottom: 1rem;
+}
+
+.recipe-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.nutrition-facts {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nutrition-facts span {
+    background: #e8f5e8;
+    color: #2e7d32;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.recipe-ingredients {
+    margin-bottom: 1.5rem;
+}
+
+.recipe-ingredients h4 {
+    color: #1b5e20;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.recipe-ingredients ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-ingredients li {
+    color: #666;
+    padding: 2px 0;
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 15px;
+}
+
+.recipe-ingredients li::before {
+    content: '•';
+    color: #4caf50;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.recipe-btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* Tips Section */
+.tips-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tip-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(135deg, #4caf50, #81c784);
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.tip-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.tip-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.tip-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1b5e20;
+    margin-bottom: 1rem;
+}
+
+.tip-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Video Section */
+.video-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.video-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+    align-items: start;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+.video-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.video-info h3 {
+    color: #1b5e20;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.video-info p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.video-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.video-features span {
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.video-features i {
+    color: #4caf50;
+    width: 16px;
+}
+
+/* Calculator Section */
+.calculator-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.calculator-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+    align-items: start;
+}
+
+.calculator-form {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.calculator-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.calculator-form input,
+.calculator-form select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.calculator-form input:focus,
+.calculator-form select:focus {
+    outline: none;
+    border-color: #4caf50;
+}
+
+.calculator-results {
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.3);
+}
+
+.calculator-results h3 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.result-item {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.result-item i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.result-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.result-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nutrition-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .video-wrapper iframe {
+        height: 250px;
+    }
+    
+    .calculator-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .nutrition-hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .recipe-content {
+        padding: 1.5rem;
+    }
+    
+    .tip-card {
+        padding: 1.5rem;
+    }
+    
+    .video-info {
+        padding: 1.5rem;
+    }
+    
+    .calculator-form,
+    .calculator-results {
+        padding: 1.5rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #4caf50;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Success/Error States */
+.success {
+    border-color: #4caf50;
+    background-color: #e8f5e8;
+}
+
+.error {
+    border-color: #f44336;
+    background-color: #ffebee;
+}
+
+/* Print Styles */
+@media print {
+    .nutrition-hero,
+    .video-section,
+    .calculator-section {
+        display: none;
+    }
+    
+    .recipe-card,
+    .tip-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Support | Health & Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../index/NavAndFooter.css">
+    <link rel="stylesheet" href="./community.css">
+</head>
+
+<body>
+    <!-- Header with Navigation -->
+    <header>
+           <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>WellnessHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../About/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index/index.html#programs" class="nav-link">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Events/events.html" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Resource/resource.html" class="nav-link">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Contact/contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../News/news.html" class="nav-link">News</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="../Tools/tools.html" class="nav-link">Tools</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="community-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Together We Grow Stronger</h1>
+                <p>Join peer support groups to build healthier habits and stay motivated.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Peer Support Groups Section -->
+    <section class="support-groups">
+        <div class="container">
+            <div class="section-title">
+                <h2>Peer Support Groups</h2>
+                <p>Find your community and get the support you need</p>
+            </div>
+
+            <div class="groups-grid">
+                <div class="group-card">
+                    <div class="card-icon">
+                        <i class="fas fa-smoking-ban"></i>
+                    </div>
+                    <h3>Smoking Recovery</h3>
+                    <p>Find guidance and encouragement to quit smoking and stay smoke-free. Connect with others who
+                        understand the challenges.</p>
+                    <a href="#join-form" class="btn">Join Group</a>
+                </div>
+
+                <div class="group-card">
+                    <div class="card-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <h3>Alcohol Recovery</h3>
+                    <p>Join a supportive community focused on reducing alcohol consumption and maintaining a healthy
+                        lifestyle.</p>
+                    <a href="#join-form" class="btn">Join Group</a>
+                </div>
+
+                <div class="group-card">
+                    <div class="card-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Healthy Habits</h3>
+                    <p>Build and maintain healthy habits with a community that shares tips, challenges, and successes.
+                    </p>
+                    <a href="#join-form" class="btn">Join Group</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Form Section -->
+    <section id="join-form" class="join-community">
+        <div class="container">
+            <div class="section-title">
+                <h2>Become Part of Our Community</h2>
+                <p>Join a support group today</p>
+            </div>
+
+            <div class="form-container">
+                <form id="community-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+                        <div class="error" id="name-error">Please enter your name (min 3 characters)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                        <div class="error" id="email-error">Please enter a valid email address</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="group">Select Group</label>
+                        <select id="group" class="form-control">
+                            <option value="">-- Select a support group --</option>
+                            <option value="smoking">Smoking Recovery</option>
+                            <option value="alcohol">Alcohol Recovery</option>
+                            <option value="habits">Healthy Habits</option>
+                        </select>
+                        <div class="error" id="group-error">Please select a group</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" class="form-control" rows="4"
+                            placeholder="Tell us a bit about yourself and your goals"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Join Now</button>
+                    <div class="success-message" id="success-message">
+                        Thank you for your application! We'll contact you within 24 hours.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>Hear from members of our community</p>
+            </div>
+
+            <div class="testimonial-carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">Quitting was tough, but the support group made me feel I wasn't
+                                alone. I'm now 6 months smoke-free!</p>
+                            <p class="testimonial-author">- Michael, Smoking Recovery Group</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">The Healthy Habits group helped me completely transform my
+                                lifestyle. I've never felt better!</p>
+                            <p class="testimonial-author">- Sarah, Healthy Habits Group</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">I've found so much strength in the Alcohol Recovery group. The
+                                community support is incredible.</p>
+                            <p class="testimonial-author">- David, Alcohol Recovery Group</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-control next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="carousel-indicators">
+                    <button class="indicator active" data-slide-to="0"></button>
+                    <button class="indicator" data-slide-to="1"></button>
+                    <button class="indicator" data-slide-to="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Buddhanagar, Kathmandu</li>
+                        <li><i class="fas fa-phone"></i> (977) 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> techspire@apu.edu</li>
+                    </ul>
+                    <div class="social-links">
+                          <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="links">
+                                      <li><a href="../Fitness/fitness.html">Fitness</a></li>
+                        <li><a href="../Nutrition/nutrition.html">Nutrition</a></li>
+                        <li><a href="../Contact/contact.html">Contact</a></li>
+                        <li><a href="../Community/community.html">Community</a></li>
+                        <li><a href="../Mental-Health/mental-health.html">Mental Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Mission</h3>
+                    <p>To promote health and wellness among students through education, resources, and supportive
+                        community programs.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellnessHub Student Organization. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./community.js"> </script>
+    <script src="../index/script.js"> </script>
+</body>
+
+</html>

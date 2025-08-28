@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition & Healthy Eating - Health & Wellness Student Organization</title>
+    <<link rel="stylesheet" href="../index/NavAndFooter.css">
+    <link rel="stylesheet" href="./nutrition.css">
+    <link rel="stylesheet" href="../index/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+       <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>WellnessHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../About/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index/index.html#programs" class="nav-link">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Events/events.html" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Resource/resource.html" class="nav-link">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Contact/contact.html" class="nav-link">Contact</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="../News/news.html" class="nav-link">News</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="../Tools/tools.html" class="nav-link">Tools</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Nutrition Hero Section -->
+    <section class="nutrition-hero">
+        <div class="container">
+            <div class="nutrition-hero-content">
+                <h1>Fuel Your Body Right</h1>
+                <p>Discover delicious, nutritious recipes and expert tips to help you maintain a healthy, balanced diet that supports your academic and fitness goals.</p>
+                <div class="hero-buttons">
+                    <a href="#recipes" class="btn btn-primary">View Recipes</a>
+                    <a href="#tips" class="btn btn-secondary">Healthy Tips</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Cards Section -->
+    <section id="recipes" class="recipes-section">
+        <div class="container">
+            <h2 class="section-title">Healthy Recipe Collection</h2>
+            <p class="section-subtitle">Quick, nutritious meals perfect for busy students</p>
+            
+            <div class="recipes-grid">
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Healthy Salad">
+                        <div class="recipe-overlay">
+                            <span class="recipe-time"><i class="fas fa-clock"></i> 15 min</span>
+                            <span class="recipe-difficulty"><i class="fas fa-star"></i> Easy</span>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Fresh Garden Salad</h3>
+                        <p class="recipe-description">A vibrant mix of fresh vegetables, nuts, and a light vinaigrette dressing.</p>
+                        <div class="recipe-info">
+                            <div class="nutrition-facts">
+                                <span><i class="fas fa-fire"></i> 180 cal</span>
+                                <span><i class="fas fa-leaf"></i> 8g protein</span>
+                                <span><i class="fas fa-seedling"></i> 12g fiber</span>
+                            </div>
+                        </div>
+                        <div class="recipe-ingredients">
+                            <h4>Key Ingredients:</h4>
+                            <ul>
+                                <li>Mixed greens</li>
+                                <li>Cherry tomatoes</li>
+                                <li>Cucumber</li>
+                                <li>Avocado</li>
+                                <li>Almonds</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary recipe-btn" data-recipe="salad">View Full Recipe</button>
+                    </div>
+                </div>
+
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Vegan Bowl">
+                        <div class="recipe-overlay">
+                            <span class="recipe-time"><i class="fas fa-clock"></i> 25 min</span>
+                            <span class="recipe-difficulty"><i class="fas fa-star"></i> Medium</span>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Protein Power Bowl</h3>
+                        <p class="recipe-description">A hearty vegan bowl packed with quinoa, roasted vegetables, and tahini dressing.</p>
+                        <div class="recipe-info">
+                            <div class="nutrition-facts">
+                                <span><i class="fas fa-fire"></i> 320 cal</span>
+                                <span><i class="fas fa-leaf"></i> 15g protein</span>
+                                <span><i class="fas fa-seedling"></i> 18g fiber</span>
+                            </div>
+                        </div>
+                        <div class="recipe-ingredients">
+                            <h4>Key Ingredients:</h4>
+                            <ul>
+                                <li>Quinoa</li>
+                                <li>Sweet potato</li>
+                                <li>Chickpeas</li>
+                                <li>Kale</li>
+                                <li>Tahini sauce</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary recipe-btn" data-recipe="bowl">View Full Recipe</button>
+                    </div>
+                </div>
+
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Smoothie">
+                        <div class="recipe-overlay">
+                            <span class="recipe-time"><i class="fas fa-clock"></i> 5 min</span>
+                            <span class="recipe-difficulty"><i class="fas fa-star"></i> Easy</span>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Berry Blast Smoothie</h3>
+                        <p class="recipe-description">A refreshing smoothie loaded with antioxidants and natural sweetness.</p>
+                        <div class="recipe-info">
+                            <div class="nutrition-facts">
+                                <span><i class="fas fa-fire"></i> 220 cal</span>
+                                <span><i class="fas fa-leaf"></i> 6g protein</span>
+                                <span><i class="fas fa-seedling"></i> 8g fiber</span>
+                            </div>
+                        </div>
+                        <div class="recipe-ingredients">
+                            <h4>Key Ingredients:</h4>
+                            <ul>
+                                <li>Mixed berries</li>
+                                <li>Banana</li>
+                                <li>Greek yogurt</li>
+                                <li>Almond milk</li>
+                                <li>Chia seeds</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary recipe-btn" data-recipe="smoothie">View Full Recipe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Healthy Eating Tips Section -->
+    <section id="tips" class="tips-section">
+        <div class="container">
+            <h2 class="section-title">Tips for Healthy Eating</h2>
+            <p class="section-subtitle">Simple strategies to improve your nutrition habits</p>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Eat the Rainbow</h3>
+                    <p>Include a variety of colorful fruits and vegetables in your diet. Different colors provide different nutrients and antioxidants.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Plan Your Meals</h3>
+                    <p>Take time to plan your weekly meals and snacks. This helps you make healthier choices and saves money.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Stay Hydrated</h3>
+                    <p>Drink plenty of water throughout the day. Aim for 8-10 glasses daily to maintain energy and focus.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Portion Control</h3>
+                    <p>Be mindful of portion sizes. Use smaller plates and listen to your body's hunger and fullness cues.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Choose Whole Foods</h3>
+                    <p>Opt for whole, unprocessed foods over packaged items. They're typically more nutritious and filling.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Cook at Home</h3>
+                    <p>Prepare meals at home when possible. You'll have better control over ingredients and portion sizes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">Nutrition Education</h2>
+            <p class="section-subtitle">Learn from nutrition experts about building healthy eating habits</p>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                   
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/OHzpMGMT9YY?si=7m0MvpuW9ECpL1NY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+                <div class="video-info">
+                    <h3>Student Nutrition Guide</h3>
+                    <p>Discover practical nutrition tips specifically designed for busy students. Learn how to fuel your body for optimal academic performance and overall health.</p>
+                    <div class="video-features">
+                        <span><i class="fas fa-play"></i> 11 min video</span>
+                        <span><i class="fas fa-user"></i> Jeff Nippard </span>
+                        <span><i class="fas fa-calendar"></i> Updated 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">Nutrition Calculator</h2>
+            <p class="section-subtitle">Calculate your daily nutritional needs</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" min="16" max="100" placeholder="Enter your age">
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" min="30" max="200" placeholder="Enter your weight">
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" min="100" max="250" placeholder="Enter your height">
+                    </div>
+                    <div class="form-group">
+                        <label for="activity">Activity Level</label>
+                        <select id="activity">
+                            <option value="">Select activity level</option>
+                            <option value="1.2">Sedentary (little or no exercise)</option>
+                            <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
+                            <option value="1.55">Moderately active (moderate exercise 3-5 days/week)</option>
+                            <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
+                            <option value="1.9">Extra active (very hard exercise, physical job)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="calculateBtn">Calculate Daily Needs</button>
+                </div>
+                
+                <div class="calculator-results" id="calculatorResults">
+                    <h3>Your Daily Nutritional Needs</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <i class="fas fa-fire"></i>
+                            <span class="result-label">Calories</span>
+                            <span class="result-value" id="calories">-</span>
+                        </div>
+                        <div class="result-item">
+                            <i class="fas fa-drumstick-bite"></i>
+                            <span class="result-label">Protein</span>
+                            <span class="result-value" id="protein">-</span>
+                        </div>
+                        <div class="result-item">
+                            <i class="fas fa-bread-slice"></i>
+                            <span class="result-label">Carbs</span>
+                            <span class="result-value" id="carbs">-</span>
+                        </div>
+                        <div class="result-item">
+                            <i class="fas fa-oil-can"></i>
+                            <span class="result-label">Fat</span>
+                            <span class="result-value" id="fat">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Health & Wellness</h3>
+                    <p>Empowering students to live healthier, more balanced lives through education, community, and support.</p>
+                    <div class="social-links">
+                       <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../Fitness/fitness.html">Fitness</a></li>
+                        <li><a href="../Nutrition/nutrition.html">Nutrition</a></li>
+                        <li><a href="../Contact/contact.html">Contact</a></li>
+                        <li><a href="../Community/community.html">Community</a></li>
+                        <li><a href="../Mental-Health/mental-health.html">Mental Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> techspire@apu.edu</p>
+                        <p><i class="fas fa-phone"></i> (977) 9876543210</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Buddhanagar, Kathmandu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellnessHub Student Organization. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../index/script.js"></script>
+    <script src="nutrition.js"></script>
+</body>
+</html>

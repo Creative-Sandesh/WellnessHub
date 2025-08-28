@@ -1,0 +1,326 @@
+
+        :root {
+            --green: #27ae60;
+            --blue: #3498db;
+            --white: #ffffff;
+            --light-gray: #f5f7fa;
+            --dark-gray: #333;
+            --text-color: #444;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Fitness-specific styles */
+        .fitness-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 150px 0 100px;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .fitness-hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .fitness-hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .hero-buttons{
+            display: flex;
+            justify-content: center;
+        }
+        .hero-buttons a{
+            width: 400px;
+            color: white;
+            border: 1px solid white;
+        }
+
+
+        /* Programs Section */
+        .programs-section {
+            padding: 2rem 0;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-icon {
+            background: linear-gradient(135deg, var(--green), var(--blue));
+            color: white;
+            font-size: 2.5rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .program-content {
+            padding: 1.5rem;
+        }
+
+        .program-content h3 {
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .program-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .program-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .program-features i {
+            color: var(--green);
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: #219653;
+            transform: translateY(-3px);
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .form-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark-gray);
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--blue);
+            outline: none;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .submit-btn {
+            background: var(--blue);
+            font-size: 1.1rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: #2980b9;
+        }
+        
+        .workout-schedule {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .schedule-table {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+        }
+
+        .schedule-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .schedule-table td {
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: middle;
+        }
+
+        .schedule-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .workout-type {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .workout-yoga {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+
+        .workout-gym {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .workout-group {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .workout-cardio {
+            background: #fce4ec;
+            color: #c2185b;
+        }
+
+        .time-slot {
+            font-weight: 600;
+            color: #1b5e20;
+        }
+
+        .instructor {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .difficulty {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+
+        .difficulty-beginner { background: #4caf50; }
+        .difficulty-intermediate { background: #ff9800; }
+        .difficulty-advanced { background: #f44336; }
+
+        @media (max-width: 768px) {
+            .fitness-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .schedule-table {
+                overflow-x: auto;
+            }
+            
+            .schedule-table th,
+            .schedule-table td {
+                padding: 1rem 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+    

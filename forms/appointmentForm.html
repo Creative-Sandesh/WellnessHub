@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counseling Appointment</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0fdf4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .counseling-form {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+
+    .counseling-form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #065f46;
+    }
+
+    .counseling-form input,
+    .counseling-form select,
+    .counseling-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.8rem;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    .counseling-form input:focus,
+    .counseling-form select:focus,
+    .counseling-form textarea:focus {
+      border-color: #10b981;
+    }
+
+    .counseling-form button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.9rem;
+      background: #10b981;
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.8rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .counseling-form button:hover {
+      background: #059669;
+    }
+
+    /* Success message popup */
+    .success-message {
+      display: none;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 1rem;
+      background: #d1fae5;
+      border-left: 5px solid #10b981;
+      border-radius: 0.8rem;
+      color: #065f46;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <form class="counseling-form" id="appointmentForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+    <label for="student-id">Student ID</label>
+    <input type="text" id="student-id" name="student-id" placeholder="Enter your Student ID" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+
+    <label for="date">Preferred Date</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Preferred Time</label>
+    <select id="time" name="time" required>
+      <option value="">-- Select Time --</option>
+      <option>Morning (9am - 12pm)</option>
+      <option>Afternoon (1pm - 3pm)</option>
+      <option>Late Afternoon (3pm - 5pm)</option>
+    </select>
+
+    <label for="reason">Reason for Appointment</label>
+    <textarea id="reason" name="reason" rows="4" placeholder="Briefly describe your concern"></textarea>
+
+    <button type="submit">Schedule Appointment</button>
+  </form>
+
+  <div class="success-message" id="successMessage">
+    ✅ Appointment Scheduled Successfully!
+  </div>
+
+  <script>
+    const form = document.getElementById('appointmentForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Stop page reload
+
+      // Simple validation (optional: enhance as needed)
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Here you can send data to server using fetch/AJAX
+      // For demo, we just show success popup
+
+      successMessage.style.display = 'block';
+
+      // Clear form
+      form.reset();
+
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>

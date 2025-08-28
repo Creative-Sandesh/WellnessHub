@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates - Health & Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../index/NavAndFooter.css">
+    <link rel="stylesheet" href="./news.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>WellnessHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../About/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index/index.html#programs" class="nav-link">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Events/events.html" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Resource/resource.html" class="nav-link">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Contact/contact.html" class="nav-link">Contact</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="../News/news.html" class="nav-link">News</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="../Tools/tools.html" class="nav-link">Tools</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-sec">
+        <div class="container">
+            <h1 class="hero-sec-title">Latest News & Updates</h1>
+            <p class="hero-sec-subtitle">Stay updated with our wellness activities and announcements.</p>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Recent News</h2>
+            <div class="news-grid" id="newsGrid">
+                <!-- News cards will be dynamically added here -->
+            </div>
+
+            <!-- News Management Form -->
+            <div class="news-form-container">
+                <h3 class="form-title" id="formTitle">Add New News Item</h3>
+                <form id="newsForm">
+                    <input type="hidden" id="newsId">
+                    <div class="news-form-group">
+                        <label for="newsTitle" class="form-label">Title</label>
+                        <input type="text" id="newsTitle" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newsDate" class="form-label">Date</label>
+                        <input type="date" id="newsDate" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newsDescription" class="form-label">Description</label>
+                        <textarea id="newsDescription" class="form-textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add News Item</button>
+                    <button type="button" id="cancelEdit" class="btn btn-outline" style="display: none;">Cancel Edit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section" style="background-color: #f5f9ff;">
+        <div class="container">
+            <h2 class="section-title">Archived News</h2>
+            <div class="timeline" id="timeline">
+                <!-- Timeline items will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+
+
+  <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+        <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Buddhanagar, Kathmandur</li>
+                        <li><i class="fas fa-phone"></i> (977) 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> techspire@apu.edu</li>
+                    </ul>
+                    <div class="social-links">
+                          <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="links">
+                        
+                        <li><a href="../Fitness/fitness.html">Fitness</a></li>
+                        <li><a href="../Nutrition/nutrition.html">Nutrition</a></li>
+                        <li><a href="../Contact/contact.html">Contact</a></li>
+                        <li><a href="../Community/community.html">Community</a></li>
+                        <li><a href="../Mental-Health/mental-health.html">Mental Health</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Mission</h3>
+                    <p>To promote health and wellness among students through education, resources, and supportive community programs.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellnessHub Student Organization. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./news.js"></script>
+    <script src="../index/script.js"></script>
+</body>
+</html>

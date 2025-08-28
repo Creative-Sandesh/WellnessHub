@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+
+    <style>
+        /* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f2f7fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #2c7a7b;
+}
+
+/* Event Cards */
+.event-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.event-card h2 {
+    color: #2c7a7b;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.event-card p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 25px;
+    background: #2c7a7b;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: #285e61;
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
+
+form label {
+    display: block;
+    margin: 15px 0 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+form input[type="submit"] {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    background: #2c7a7b;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background: #285e61;
+}
+
+.success-message {
+    color: green;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Upcoming Events</h1>
+
+        <div class="event-card">
+            <h2>Fitness Challenges</h2>
+            <p class="date">Sept 25, 2025 – 4:00 PM</p>
+            <p>Push yourself with weekly workout challenges designed for all fitness levels.</p>
+            <button class="btn" onclick="openForm('Fitness Challenges')">Register Now</button>
+        </div>
+
+        <div class="event-card">
+            <h2>Sports Events</h2>
+            <p class="date">Oct 2, 2025 – 3:00 PM</p>
+            <p>Join our sports days, from football to basketball, volleyball and more.</p>
+            <button class="btn" onclick="openForm('Sports Events')">Register Now</button>
+        </div>
+
+        <div class="event-card">
+            <h2>Step Competitions</h2>
+            <p class="date">Oct 9, 2025 – 5:00 PM</p>
+            <p>Count your steps, compete with friends, and win exciting prizes.</p>
+            <button class="btn" onclick="openForm('Step Competitions')">Register Now</button>
+        </div>
+
+        <div class="event-card">
+            <h2>Community Yoga</h2>
+            <p class="date">Oct 16, 2025 – 9:00 AM</p>
+            <p>Join our outdoor community yoga session for all experience levels.</p>
+            <button class="btn" onclick="openForm('Community Yoga')">Register Now</button>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div class="modal" id="registrationModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeForm()">&times;</span>
+            <h2 id="eventTitle">Register</h2>
+            <form id="regForm" onsubmit="return submitForm()">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required placeholder="Your Name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" required placeholder="you@example.com">
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" required placeholder="123-456-7890">
+
+                <input type="submit" value="Submit">
+            </form>
+            <p class="success-message" id="successMessage"></p>
+        </div>
+    </div>
+
+    <script>
+       let selectedEvent = '';
+
+function openForm(eventName) {
+    selectedEvent = eventName;
+    document.getElementById('eventTitle').innerText = `Register for ${eventName}`;
+    document.getElementById('registrationModal').style.display = 'block';
+    document.getElementById('successMessage').innerText = '';
+    document.getElementById('regForm').reset();
+}
+
+function closeForm() {
+    document.getElementById('registrationModal').style.display = 'none';
+}
+
+function submitForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    if (name === '' || email === '' || phone === '') {
+        alert('Please fill all fields');
+        return false;
+    }
+
+    // Show success message
+    document.getElementById('successMessage').innerText = `Thank you, ${name}! You have successfully registered for ${selectedEvent}.`;
+
+    // Automatically close modal after 3 seconds and return to event page
+    setTimeout(() => {
+        closeForm();
+        alert(`You are now returned to the event page. Check out other events!`);
+    }, 3000);
+
+    return false; // Prevent page reload
+}
+
+// Close modal when clicking outside content
+window.onclick = function(event) {
+    const modal = document.getElementById('registrationModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+    </script>
+</body>
+</html>

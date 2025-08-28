@@ -1,0 +1,416 @@
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #2ecc71;
+            --primary-dark: #27ae60;
+            --secondary: #3498db;
+            --secondary-dark: #2980b9;
+            --white: #ffffff;
+            --light-gray: #f9f9f9;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #333333;
+            --text: #444444;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+        .events-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 8rem 0;
+            text-align: center;
+        }
+
+        .events-hero .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .events-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .events-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Event Cards Section */
+        .event-cards {
+            padding: 5rem 0;
+            background: var(--light-gray);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.2);
+        }
+
+        .event-card .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .event-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .event-card .event-date {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .event-card p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Event Calendar Section */
+        .event-calendar {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .calendar-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .calendar-header {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .calendar-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calendar-table th {
+            padding: 1rem;
+            background: rgba(46, 204, 113, 0.1);
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+
+        .calendar-table td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            cursor: default;
+        }
+
+        .calendar-table td:hover {
+            background: rgba(46, 204, 113, 0.05);
+        }
+
+        .event-day {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .event-day:after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--white);
+            border-radius: 50%;
+        }
+
+        .event-day:hover {
+            background: var(--primary-dark);
+        }
+
+        .event-day:hover:before {
+            content: attr(data-event);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: normal;
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        .calendar-legend {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 1rem;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 4px;
+            margin-right: 0.5rem;
+        }
+
+        /* Countdown Timer Section */
+        .countdown-timer {
+            padding: 5rem 0;
+            background: linear-gradient(to right, rgba(46, 204, 113, 0.8), rgba(39, 174, 96, 0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .countdown-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .countdown-content > p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .time-unit {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            min-width: 100px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .time-unit span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .time-unit small {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                background: var(--white);
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                z-index: 99;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .events-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timer {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .time-unit {
+                min-width: 80px;
+                padding: 1rem;
+            }
+            
+            .time-unit span {
+                font-size: 2rem;
+            }
+            
+            .calendar-table {
+                font-size: 0.9rem;
+            }
+            
+            .calendar-table th,
+            .calendar-table td {
+                padding: 0.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .events-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .time-unit {
+                min-width: 60px;
+            }
+            
+            .time-unit span {
+                font-size: 1.5rem;
+            }
+        }

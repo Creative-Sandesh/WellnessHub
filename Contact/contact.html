@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Health & Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../index/NavAndFooter.css">
+    <link rel="stylesheet" href="./contact.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+            <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>WellnessHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../About/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index/index.html#programs" class="nav-link">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Events/events.html" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Resource/resource.html" class="nav-link">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Contact/contact.html" class="nav-link">Contact</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="../News/news.html" class="nav-link">News</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="../Tools/tools.html" class="nav-link">Tools</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+  
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Get in Touch — We're Here to Help</h1>
+                <p>Questions, feedback, or need support? Reach out and our wellness team will respond.</p>
+                <a href="#contact-form" class="btn">Send a Message</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Cards Section -->
+    <section class="contact-cards">
+        <div class="container">
+            <div class="cards-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>General Enquiries</h3>
+                    <span class="contact-detail">wellness@university.edu</span>
+                    <p>General info, membership, and partnership enquiries.</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>On-Campus Counseling</h3>
+                    <span class="contact-detail">+977-01-xxxxxxx</span>
+                    <span class="contact-detail">Mon–Fri 9:00 AM – 5:00 PM</span>
+                    <p>Wellness Center, Building A</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Emergency & Helpline</h3>
+                    <span class="contact-detail">+977-98xxxxxxx (24/7 Hotline)</span>
+                    <p>If you're in immediate danger, call your local emergency services first.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="contact-form-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Send Us a Message</h2>
+                <p>We'll get back to you as soon as possible</p>
+            </div>
+            
+            <div class="form-container">
+                <form id="contactForm" role="form" aria-labelledby="formTitle">
+                    <h3 id="formTitle" class="visually-hidden">Contact Form</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your full name" required maxlength="100">
+                        <div class="error" id="name-error">Please enter your name</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        <div class="error" id="email-error">Please enter a valid email address</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                        <div class="error" id="phone-error">Please enter a valid phone number</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" class="form-control" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="membership">Membership</option>
+                            <option value="workshop">Workshop Registration</option>
+                            <option value="counseling">Counseling</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                        <div class="error" id="subject-error">Please select a subject</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required minlength="20"></textarea>
+                        <div class="error" id="message-error">Please enter a message (minimum 20 characters)</div>
+                    </div>
+                    
+                    <!-- Honeypot field -->
+                    <div class="form-group honeypot">
+                        <label for="website">Website</label>
+                        <input type="text" id="website" class="form-control" placeholder="Your website">
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <input type="checkbox" id="consent" required>
+                            <label for="consent">I agree to be contacted regarding my enquiry</label>
+                        </div>
+                        <div class="error" id="consent-error">Please agree to be contacted</div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" class="btn" id="submit-btn">Send Message</button>
+                        <button type="reset" class="btn btn-reset">Clear Form</button>
+                    </div>
+                    
+                    <div class="success-message" id="success-message" role="status">
+                        Thank you! Your message has been received. Our wellness team will reply to you within 2 business days.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Find Us</h2>
+                <p>Visit our wellness center on campus</p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-wrapper">
+                    <!-- Google Maps iframe -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.456205029989!2d85.31647097599615!3d27.70284027618436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1968cee7500d%3A0x260f11a4a2e7c416!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2sus!4v1690224080488!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                
+                <div class="location-info">
+                    <h3>Wellness Center Location</h3>
+                    
+                    <div class="location-detail">
+                        <h4>Address</h4>
+                        <p>123 Wellness Avenue<br>University Campus<br>Kathmandu, Nepal</p>
+                    </div>
+                    
+                    <div class="location-detail">
+                        <h4>Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
+                    </div>
+                    
+                    <a href="https://maps.google.com" target="_blank" class="directions-link">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span>How long before I hear back?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>We typically respond to all inquiries within 2 business days. For urgent matters, please call our helpline.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span>Where is the Wellness Center?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Our Wellness Center is located in Building A on the main campus. See the map section for detailed directions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span>How to book a counselor?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>You can book a counseling session by calling our office during business hours or by using the contact form above.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="social-section">
+        <div class="container">
+            <div class="social-container">
+                <h2>Follow Us & Stay Updated</h2>
+                <p>Connect with us on social media for daily wellness tips and updates</p>
+                
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                
+                <div class="newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Get wellness tips and updates directly to your inbox</p>
+                    
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email address">
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Buddhanagar, Kathmandu</li>
+                        <li><i class="fas fa-phone"></i> (977) 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> techspire@apu.edu</li>
+                    </ul>
+                    <div class="social-links">
+                         <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="links">
+                                     <li><a href="../Fitness/fitness.html">Fitness</a></li>
+                        <li><a href="../Nutrition/nutrition.html">Nutrition</a></li>
+                        <li><a href="../Contact/contact.html">Contact</a></li>
+                        <li><a href="../Community/community.html">Community</a></li>
+                        <li><a href="../Mental-Health/mental-health.html">Mental Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Mission</h3>
+                    <p>To promote health and wellness among students through education, resources, and supportive community programs.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellnessHub Student Organization. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        Thank you for subscribing to our newsletter!
+    </div>
+
+    <script src="./contact.js"></script>
+    <script src="../index/script.js"></script>
+</body>
+</html>

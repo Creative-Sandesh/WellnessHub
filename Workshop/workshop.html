@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Wellness Workshops</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../index/NavAndFooter.css">
+    <link rel="stylesheet" href="./workshop.css">
+
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+            <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>WellnessHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../About/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index/index.html#programs" class="nav-link">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Events/events.html" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Resource/resource.html" class="nav-link">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Contact/contact.html" class="nav-link">Contact</a>
+                </li>
+                
+                 <li class="nav-item">
+                    <a href="../News/news.html" class="nav-link">News</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="../Tools/tools.html" class="nav-link">Tools</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Join Our Wellness Workshops – Learn, Grow, Thrive.</h1>
+                <p>Discover our comprehensive workshop programs designed to help you build healthy habits, reduce stress, and improve your overall well-being.</p>
+                <a href="#registration" class="btn">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Workshops -->
+    <section id="upcoming" class="upcoming-workshops">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Workshops</h2>
+                <p>Join our expert-led wellness workshops</p>
+            </div>
+            <div class="workshop-cards">
+                <div class="workshop-card">
+                    <div class="card-header">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Mindfulness Meditation</h3>
+                        <span class="date">Sept 20, 2025 – 3:00 PM</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Learn techniques to reduce stress and increase focus through guided meditation practices.</p>
+                        <a href="#registration" class="btn">Register Now</a>
+                    </div>
+                </div>
+                <div class="workshop-card">
+                    <div class="card-header">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Nutrition Fundamentals</h3>
+                        <span class="date">Sept 27, 2025 – 4:00 PM</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Discover how to build a balanced diet that supports your health and wellness goals.</p>
+                        <a href="#registration" class="btn">Register Now</a>
+                    </div>
+                </div>
+                <div class="workshop-card">
+                    <div class="card-header">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Stress Management</h3>
+                        <span class="date">Oct 4, 2025 – 2:00 PM</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Develop effective coping strategies for managing stress in your daily life.</p>
+                        <a href="#registration" class="btn">Register Now</a>
+                    </div>
+                </div>
+                <div class="workshop-card">
+                    <div class="card-header">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Sleep Optimization</h3>
+                        <span class="date">Oct 11, 2025 – 5:00 PM</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Learn techniques to improve your sleep quality and establish healthy sleep habits.</p>
+                        <a href="#registration" class="btn">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="registration" class="registration">
+        <div class="container">
+            <div class="section-title">
+                <h2>Register for a Workshop</h2>
+                <p>Secure your spot in our upcoming workshops</p>
+            </div>
+            <div class="form-container">
+                <form id="workshop-registration">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" class="form-control" placeholder="Enter your full name">
+                        <div class="error" id="name-error">Please enter your name</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                        <div class="error" id="email-error">Please enter a valid email address</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="workshop">Select Workshop</label>
+                        <select id="workshop" class="form-control">
+                            <option value="">-- Select a workshop --</option>
+                            <option value="mindfulness">Mindfulness Meditation - Sept 20, 2025</option>
+                            <option value="nutrition">Nutrition Fundamentals - Sept 27, 2025</option>
+                            <option value="stress">Stress Management - Oct 4, 2025</option>
+                            <option value="sleep">Sleep Optimization - Oct 11, 2025</option>
+                        </select>
+                        <div class="error" id="workshop-error">Please select a workshop</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Any questions or comments?"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Registration</button>
+                    <div class="success-message" id="success-message">
+                        Thank you for your registration! We'll contact you with further details.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Workshops Timeline -->
+    <section id="past" class="past-workshops">
+        <div class="container">
+            <div class="section-title">
+                <h2>Past Workshops</h2>
+                <p>Check out our successful previous events</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <i class="fas fa-check-circle"></i>July 2025
+                        </div>
+                        <h3>Stress Management Seminar</h3>
+                        <p>Participants learned practical techniques for managing academic and personal stress.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <i class="fas fa-check-circle"></i>June 2025
+                        </div>
+                        <h3>Healthy Cooking Workshop</h3>
+                        <p>Hands-on cooking session focused on quick, nutritious meals for busy students.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <i class="fas fa-check-circle"></i>May 2025
+                        </div>
+                        <h3>Yoga for Beginners</h3>
+                        <p>Introduction to yoga postures and breathing techniques for relaxation and flexibility.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Buddhanagar</li>
+                        <li><i class="fas fa-phone"></i> (977) 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> techspire@apu.edu</li>
+                    </ul>
+                    <div class="social-links">
+                          <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="links">
+                        
+                        <li><a href="../Fitness/fitness.html">Fitness</a></li>
+                        <li><a href="../Nutrition/nutrition.html">Nutrition</a></li>
+                        <li><a href="../Contact/contact.html">Contact</a></li>
+                        <li><a href="../Community/community.html">Community</a></li>
+                        <li><a href="../Mental-Health/mental-health.html">Mental Health</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Mission</h3>
+                    <p>To promote health and wellness among students through education, resources, and supportive community programs.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellnessHub Student Organization. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./workshop.js"> </script>
+    <script src="../index/script.js"> </script>
+</body>
+</html>
